@@ -20,5 +20,16 @@ OpenCV uses to identify the faces.  I modified the facedetect.py script
 to work with the servos and festival output - this is the script that
 you have now from this Github repo.
 
+pi-blaster makes all the GPIO pins PWM capable, you need to use 2 pins
+for the servos, one for pan the other for tilt.  My facedetect.py uses
+pi-blaster pin 6 for tilt and 7 for pan (GPIO 24,25).  You can change
+these pins as needed.
+
+The servo values need to be calibrated for your individual servos.
+There is a mapping function that scales a range into another range,
+which given the calibrated servo values for both pan and tilt will
+give you accurate tracking.  Play with these values until they work
+for your servos.
+
 Any questions please feel free to ask.
 
